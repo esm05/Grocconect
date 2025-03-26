@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocconnect - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-green-50 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-green-600 text-white p-4 flex justify-between items-center">
+        <div class="text-2xl font-bold">
+            <a href="/" class="block w-full"> 
+                <button>
+                    <i class="fas fa-leaf mr-2"></i>Grocconnect
+                </button>
+            </a>
+        </div>
+        <nav>
+            <a href="#" class="text-white hover:text-green-200">Profile</a>
+            <a href="#" class="text-white hover:text-green-200">Cart</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto p-8">
+        <h1 class="text-3xl font-bold text-green-700 mb-6">Welcome to Grocconnect</h1>
+        
+        <div class="grid grid-cols-3 gap-6">
+            <!-- Grocery Categories -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-green-600 mb-4">
+                    <i class="fas fa-apple-alt mr-2"></i>Fresh Produce
+                </h2>
+                <ul class="space-y-2">
+                    <li>Fruits</li>
+                    <li>Vegetables</li>
+                    <li>Herbs</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-green-600 mb-4">
+                    <i class="fas fa-bread-slice mr-2"></i>Bakery
+                </h2>
+                <ul class="space-y-2">
+                    <li>Bread</li>
+                    <li>Pastries</li>
+                    <li>Cakes</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-green-600 mb-4">
+                    <i class="fas fa-cheese mr-2"></i>Dairy & Eggs
+                </h2>
+                <ul class="space-y-2">
+                    <li>Milk</li>
+                    <li>Cheese</li>
+                    <li>Eggs</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white p-4 text-center">
+        <p>&copy; 2025 Grocconnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>

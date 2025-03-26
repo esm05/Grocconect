@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocconnect - Your Grocery Companion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-green-200 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-green-600 text-white p-4 flex justify-between items-center">
+        <div class="text-2xl font-bold">
+            <a href="/" class="block w-full"> 
+                <button>
+                    <i class="fa-solid fa-seedling mr-4"></i>Grocconnect
+                </button>
+            </a>
+        </div>
+        <nav>
+            <a href="#" class="text-white hover:text-green-200">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-8">
+        <div class="container mx-auto flex items-center">
+            <!-- Login Section -->
+            <div class="w-1/2 pr-8">
+                <div class="bg-white shadow-lg rounded-lg p-8">
+                    <h2 class="text-2xl font-bold mb-6 text-green-700">Welcome to Grocconnect</h2>
+                    
+                    <div class="space-y-4">
+                        <button class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-user-lock mr-2"></i>
+                            Login to Admin Account
+                        </button>
+                        
+                        <div class="text-center my-4">
+                            <span class="text-gray-500">or</span>
+                        </div>
+                       <a href="/home" class="block w-full" >
+                        <button class="w-full bg-gray-200 text-green-700 py-3 rounded-lg hover:bg-gray-300 transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart mr-2"></i>
+                            Continue as Guest
+                        </button>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Section -->
+            <div class="w-1/2">
+                <img src="img/stock_groceries.jpg" alt="Groceries" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-600 text-white p-4 text-center">
+        <p>&copy; 2025 Grocconnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>
