@@ -4,15 +4,25 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var homeRouter = require('./routes/home');
-var fruitRouter = require('./routes/produce');
+var indexRouter = require('./app_server/routes/index');
+//var usersRouter = require('./routes/users');
+var homeRouter = require('./app_server/routes/home');
+var produceRouter = require('./app_server/routes/produce');
+var bakeryRouter = require('./app_server/routes/bakery')
+var dairyRouter = require('./app_server/routes/dairy')
+var groceryRouter = require('./app_server/routes/grocery')
+var meatRouter = require('./app_server/routes/meat')
+var seafoodRouter = require('./app_server/routes/seafood')
+var handlebars = require('hbs');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app_server', 'views'));
+
+// register handlebars partials (https://www.npmjs.com/package/hbs)
+handlebars.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
+
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
@@ -24,8 +34,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Setting up routes for the different pages 
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
-app.use('/users', usersRouter);
-app.use('/produce', fruitRouter);
+//app.use('/users', usersRouter);
+app.use('/produce', produceRouter);
+app.use('/bakery', bakeryRouter);
+app.use('/dairy', dairyRouter);
+app.use('/grocery', groceryRouter);
+app.use('/meat', meatRouter);
+app.use('/seafood', seafoodRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

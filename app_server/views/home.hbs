@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grocconnect - Home</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+
+<!-- Header --> <!-- CHANGED FONT-->
+<body class="font-serif m-0 p-0 bg-gray-100 leading-relaxed">
+    {{> header}}
+    <!-- Grid of widgets -->
+    <!-- Images come from https://pixabay.com/ -->
+     <div class="bg-gray-300 mx-auto w-auto h-auto">
+     <div class="bg-green-800 mx-auto w-11/12 h-auto ">
+        <header class="text-white p-8 flex justify-center items-center text-6xl font-bold">Departments</header>
+        <div class="container mx-auto w-11/12 max-w-6xl px-5 py-20">
+        <div class="flex justify-center flex-wrap gap-5 mb-8">
+            <a href="produce" class="flex flex-col items-center w-[240px]  h-[240px] p-4 bg-stone-300 rounded-lg shadow-md transition-all duration-300 hover:scale-105 no-underline text-black">
+                <h3 class="text-2xl text-center">PRODUCE</h3>
+                <img src="img/produce.jpg" alt="Produce" class="w-40 h-40 object-cover mb-3">
+            </a>
+            <a href="dairy" class="flex flex-col items-center w-[240px]  h-[240px] p-4 bg-stone-300 rounded-lg shadow-md transition-all duration-300 hover:scale-105 no-underline text-black">
+                <h3 class="text-2xl text-center">DAIRY</h3>
+                <img src="img/dairy.jpg" alt="Dairy" class="w-40 h-40 object-cover mb-3">
+            </a>
+            <a href="bakery" class="flex flex-col items-center w-[240px]  h-[240px] p-4 bg-stone-300 rounded-lg shadow-md transition-all duration-300 hover:scale-105 no-underline text-black">
+                <h3 class="text-2xl text-center">BAKERY</h3>
+                <img src="img/bakery.jpg" alt="Bakery" class="w-40 h-40 object-cover mb-3">
+            </a>
+            <a href="meat" class="flex flex-col items-center w-[240px]  h-[240px] p-4 bg-stone-300 rounded-lg shadow-md transition-all duration-300 hover:scale-105 no-underline text-black">
+                <h3 class="text-2xl text-center">MEAT</h3>
+                <img src="img/meat.jpg" alt="Meat" class="w-40 h-40 object-cover mb-3">
+            </a>
+            <a href="seafood" class="flex flex-col items-center w-[240px]  h-[240px] p-4 bg-stone-300 rounded-lg shadow-md transition-all duration-300 hover:scale-105 no-underline text-black">
+                <h3 class="text-2xl text-center">SEAFOOD</h3>
+                <img src="img/seafood.jpg" alt="Seafood" class="w-40 h-40 object-cover mb-3">
+            </a>
+            <a href="grocery" class="flex flex-col items-center w-[240px] h-[240px] p-4 bg-stone-300 rounded-lg shadow-md transition-all duration-300 hover:scale-105 no-underline text-black">
+                <h3 class="text-2xl text-center">GROCERY</h3>
+                <img src="img/grocery.jpg" alt="Grocery" class="w-40 h-40 object-cover mb-3">
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+    {{> footer}}
+</body>
+</html>

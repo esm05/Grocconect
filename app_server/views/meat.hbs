@@ -7,64 +7,59 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 <body class="font-sans m-0 p-0 bg-gray-100 leading-relaxed">
-    <header class="bg-green-600 text-white p-4 flex justify-between items-center">
-        <div class="text-2xl font-bold">
-            <a href="/" class="block w-full"> 
-                <button>
-                    <i class="fa-solid fa-seedling mr-4"></i>Grocconnect
-                </button>
-            </a>
-        </div>
-        <nav>
-            <a href="#" class="text-white hover:text-green-200">About</a>
-        </nav>
-    </header>
-    <div class="container mx-auto w-11/12 max-w-6xl px-5 py-5">
+    {{> header}}
+    <div class="bg-green-800 mx-auto w-11/12 h-auto px-5 py-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
             <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="/api/placeholder/200/200" alt="Apples" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Apples</h3>
-                <p class="font-bold text-green-500 text-xl">$2.99/lb</p>
+                <img src="img/lc_lamb.jpg" alt="lc_lamp" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">Loin Chops Lamb</h3>
+                <p class="font-bold text-green-500 text-xl">$14.99/lb</p>
+                <p class="text-gray-600">Available Qty: 25</p>
                 <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
                     Add to Cart
                 </button>
             </div>
             <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="/api/placeholder/200/200" alt="Bananas" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Bananas</h3>
+                <img src="img/ny_strip.jpg" alt="ny_srtip" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">New York Strip Steak</h3>
+                <p class="font-bold text-green-500 text-xl">$9.99/lb</p>
+                <p class="text-gray-600">Available Qty: 25</p>
+                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
+                    Add to Cart
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
+                <img src="img/pork chops.jpg" alt="Pork Chops" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">Pork Chops</h3>
+                <p class="font-bold text-green-500 text-xl">$2.49/lb</p>
+                <p class="text-gray-600">Available Qty: 25</p>
+                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
+                    Add to Cart
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
+                <img src="img/c_quarters.jpg" alt="Chicken Quarters" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">Chicken Quarters</h3>
                 <p class="font-bold text-green-500 text-xl">$0.99/lb</p>
+                <p class="text-gray-600">Available Qty: 25</p>
                 <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
                     Add to Cart
                 </button>
             </div>
             <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="/api/placeholder/200/200" alt="Oranges" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Oranges</h3>
-                <p class="font-bold text-green-500 text-xl">$1.99/lb</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="/api/placeholder/200/200" alt="Strawberries" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Strawberries</h3>
-                <p class="font-bold text-green-500 text-xl">$3.49/pack</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="/api/placeholder/200/200" alt="Grapes" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Green Grapes</h3>
-                <p class="font-bold text-green-500 text-xl">$2.79/lb</p>
+                <img src="img/c_wings.jpg" alt="c_wings" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">Chicken Wings</h3>
+                <p class="font-bold text-green-500 text-xl">$3.49/lb</p>
+                <p class="text-gray-600">Available Qty: 25</p>
                 <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
                     Add to Cart
                 </button>
             </div>
         </div>
         <div class="text-center mt-5">
-            <a href="home.html" class="text-green-500 font-bold hover:underline"><- Back to Home</a>
+            <a href="home" class="text-green-1000 font-bold hover:underline"><- Back to Home</a>
         </div>
     </div>
+    {{> footer}}
 </body>
 </html>
