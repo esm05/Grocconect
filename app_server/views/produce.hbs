@@ -2,64 +2,178 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Grocconnect - Fruits</title>
+        <title>{{title}}</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            .pagination-dots {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            .dot {
+                height: 12px;
+                width: 12px;
+                margin: 0 5px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .dot.active {
+                background-color: #4CAF50;
+            }
+            .pagination-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 24px;
+                background-color: rgba(255, 255, 255, 0.7);
+                color: #4CAF50;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all 0.3s;
+                z-index: 10;
+            }
+            .pagination-arrow:hover {
+                background-color: #4CAF50;
+                color: white;
+            }
+            .pagination-arrow.right {
+                right: -15px;
+            }
+            .pagination-arrow.left {
+                left: -15px;
+            }
+        </style>
     </head>
 <body class="font-serif m-0 p-0 bg-gray-100 leading-relaxed">
     {{> header}}
     <div class="bg-green-800 mx-auto w-11/12 h-auto px-5 py-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/apple.jpg" alt="Apples" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Apples</h3>
-                <p class="font-bold text-green-500 text-xl">$2.29/lb</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
+        <div class="relative" id="produceContainer">
+            <!-- Pagination arrows -->
+            <div class="pagination-arrow left hidden" id="prevPage">
+                <i class="fas fa-chevron-left"></i>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/banana.jpg" alt="Bananas" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Bananas</h3>
-                <p class="font-bold text-green-500 text-xl">$0.49/lb</p>
-                <p class="text-gray-600">Available Qty: 5</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
+            <div class="pagination-arrow right {{#unless hasMultiplePages}}hidden{{/unless}}" id="nextPage">
+                <i class="fas fa-chevron-right"></i>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/orange.jpg" alt="Oranges" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Oranges</h3>
-                <p class="font-bold text-green-500 text-xl">$1.00/each</p>
-                <p class="text-gray-600">Available Qty: 8</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
+            
+            <!-- Product grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5" id="produceGrid">
+                {{#each currentPageItems}}
+                <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
+                    <a href="/api/produces/{{this.name}}"><img src="img/{{this.image}}" alt="{{this.name}}" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3"></a>
+                    <h3 class="my-3 text-gray-700">{{this.name}}</h3>
+                    <p class="font-bold text-green-500 text-xl">{{this.cost}}</p>
+                    <p class="text-gray-600">Available Qty: {{this.avail_qty}}</p>
+                    <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+                {{/each}}
             </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/strawberries.jpg" alt="Strawberries" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Strawberries</h3>
-                <p class="font-bold text-green-500 text-xl">$4.25/lb</p>
-                <p class="text-gray-600">Available Qty: 5 </p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
+            
+            <!-- Pagination dots -->
+            {{#if hasMultiplePages}}
+            <div class="pagination-dots mt-6" id="paginationDots">
+                {{#each pageNumbers}}
+                <span class="dot {{#if (eq this ../currentPage)}}active{{/if}}" data-page="{{this}}"></span>
+                {{/each}}
             </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/grapes.jpg" alt="Grapes" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Green Grapes</h3>
-                <p class="font-bold text-green-500 text-xl">$1.99/lb</p>
-                <p class="text-gray-600">Available Qty: 50</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
+            {{/if}}
         </div>
+        
         <div class="text-center mt-5">
             <a href="home" class="text-green-1000 font-bold hover:underline"><- Back to Home</a>
         </div>
     </div>
+    
+    {{#if hasMultiplePages}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // All produce items and pagination data
+            const allProduceItems = {{{allItemsJson}}};
+            const itemsPerPage = {{itemsPerPage}};
+            const totalItems = allProduceItems.length;
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            
+            let currentPage = 0;
+            
+            const produceGrid = document.getElementById('produceGrid');
+            const paginationDots = document.querySelectorAll('.dot');
+            const prevButton = document.getElementById('prevPage');
+            const nextButton = document.getElementById('nextPage');
+            
+            // Function to display items for a specific page
+            function showPage(pageNumber) {
+                // Calculate start and end indices
+                const startIndex = pageNumber * itemsPerPage;
+                const endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+                
+                // Clear current grid
+                produceGrid.innerHTML = '';
+                
+                // Add items for current page
+                for (let i = startIndex; i < endIndex; i++) {
+                    const item = allProduceItems[i];
+                    const itemHtml = `
+                        <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
+                            <a href="/api/produces/${item.name}"><img src="img/${item.image}" alt="${item.name}" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3"></a>
+                            <h3 class="my-3 text-gray-700">${item.name}</h3>
+                            <p class="font-bold text-green-500 text-xl">${item.cost}</p>
+                            <p class="text-gray-600">Available Qty: ${item.avail_qty}</p>
+                            <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
+                                Add to Cart
+                            </button>
+                        </div>
+                    `;
+                    produceGrid.insertAdjacentHTML('beforeend', itemHtml);
+                }
+                
+                // Update dots
+                paginationDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === pageNumber);
+                });
+                
+                // Update arrows
+                prevButton.classList.toggle('hidden', pageNumber === 0);
+                nextButton.classList.toggle('hidden', pageNumber === totalPages - 1);
+                
+                // Update current page
+                currentPage = pageNumber;
+            }
+            
+            // Add event listeners to dots
+            paginationDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const pageIndex = parseInt(this.getAttribute('data-page'));
+                    showPage(pageIndex);
+                });
+            });
+            
+            // Add event listeners to arrows
+            prevButton.addEventListener('click', function() {
+                if (currentPage > 0) {
+                    showPage(currentPage - 1);
+                }
+            });
+            
+            nextButton.addEventListener('click', function() {
+                if (currentPage < totalPages - 1) {
+                    showPage(currentPage + 1);
+                }
+            });
+        });
+    </script>
+    {{/if}}
+    
     {{> footer}}
 </body>
 </html>

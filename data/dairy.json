@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Almond Milk",
+        "cost": "$2.49/each",
+        "image": "a_milk.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Dozen of Eggs",
+        "cost": "$5.99/each",
+        "image": "d_eggs.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "1% Milk",
+        "cost": "$2.99/each",
+        "image": "1p_milk.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Cheddar Cheese",
+        "cost": "$2.79/lb",
+        "image": "c_cheese.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Butter",
+        "cost": "$3.96/each",
+        "image": "butter.jpg",
+        "avail_qty": "25"
+    }
+]

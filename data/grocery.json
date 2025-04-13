@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Spaghetti",
+        "cost": "$0.97/each",
+        "image": "spaghetti.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Couscous",
+        "cost": "$2.99/each",
+        "image": "couscous.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Strawberry Jam",
+        "cost": "$5.09/each",
+        "image": "s_jam.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Peanut Butter",
+        "cost": "$2.50/each",
+        "image": "pb.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "12 pack Variety Celcius",
+        "cost": "$21.99/each",
+        "image": "celcius.jpg",
+        "avail_qty": "25"
+    }
+]

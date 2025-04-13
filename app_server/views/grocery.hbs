@@ -10,51 +10,17 @@
     {{> header}}
     <div class="bg-green-800 mx-auto w-11/12 h-auto px-5 py-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+            {{#each grocery}}
             <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/spaghetti.jpg" alt="spaghetti" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Spaghetti</h3>
-                <p class="font-bold text-green-500 text-xl">$0.97/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
+                <img src="img/{{this.image}}" alt="{{this.name}}" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">{{this.name}}</h3>
+                <p class="font-bold text-green-500 text-xl">{{this.cost}}</p>
+                <p class="text-gray-600">Available Qty: {{this.avail_qty}}</p>
                 <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
                     Add to Cart
                 </button>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/couscous.jpg" alt="Couscous" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Couscous</h3>
-                <p class="font-bold text-green-500 text-xl">$2.99/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/s_jam.jpg" alt="s_jam" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Strawberry Jam</h3>
-                <p class="font-bold text-green-500 text-xl">$5.09/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/pb.jpg" alt="pb" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Peanut Butter</h3>
-                <p class="font-bold text-green-500 text-xl">$2.50/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/celcius.jpg" alt="12pk_varity_celcius" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">12 pack Variety Celcius</h3>
-                <p class="font-bold text-green-500 text-xl">$21.99/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
+            {{/each}}
         </div>
         <div class="text-center mt-5">
             <a href="home" class="text-green-1000 font-bold hover:underline"><- Back to Home</a>

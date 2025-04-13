@@ -10,51 +10,17 @@
     {{> header}}
     <div class="bg-green-800 mx-auto w-11/12 h-auto px-5 py-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+            {{#each bakery}}
             <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/c_cake.jpg" alt="c_cake" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Chocolate Cake</h3>
-                <p class="font-bold text-green-500 text-xl">$9.99/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
+                <img src="img/{{this.image}}" alt="{{this.name}}" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">{{this.name}}</h3>
+                <p class="font-bold text-green-500 text-xl">{{this.cost}}</p>
+                <p class="text-gray-600">Available Qty: {{this.avail_qty}}</p>
                 <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
                     Add to Cart
                 </button>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/gf_bread.jpg" alt="gf_bread" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Gluten-Free Bread</h3>
-                <p class="font-bold text-green-500 text-xl">$6.59/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/i_bread.jpg" alt="i_bread" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Italian Bread</h3>
-                <p class="font-bold text-green-500 text-xl">$2.99/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/c_muffins.jpg" alt="c_muffins" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">4 ct. Chocolate Muffins</h3>
-                <p class="font-bold text-green-500 text-xl">$4.99/pack</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/brownie.jpg" alt="brownie" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Brownies</h3>
-                <p class="font-bold text-green-500 text-xl">$5.99/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
+            {{/each}}
         </div>
         <div class="text-center mt-5">
             <a href="home" class="text-green-1000 font-bold hover:underline"><- Back to Home</a>

@@ -13,7 +13,13 @@ var dairyRouter = require('./app_server/routes/dairy')
 var groceryRouter = require('./app_server/routes/grocery')
 var meatRouter = require('./app_server/routes/meat')
 var seafoodRouter = require('./app_server/routes/seafood')
+
+
+var apiProduceRouter = require('./app_api/routes/index')
 var handlebars = require('hbs');
+
+// Bring in db
+require('./app_api/models/db')
 
 var app = express();
 
@@ -42,7 +48,22 @@ app.use('/grocery', groceryRouter);
 app.use('/meat', meatRouter);
 app.use('/seafood', seafoodRouter);
 
+// Add this before your route definitions
+app.use((req, res, next) => {
+  console.log(`Request URL: ${req.url}`);
+  next();
+});
+app.use('/api', apiProduceRouter);
 
+// Then add this right before your 404 handler
+app.use((req, res, next) => {
+  console.log(`No route matched for: ${req.url}`);
+  next();
+});
+
+app.get('/api-test', (req, res) => {
+  res.status(200).json({message: 'API is working'});
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

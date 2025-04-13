@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Sockeye Salmon",
+        "cost": "$9.99/lb",
+        "image": "s_salmon.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Clams",
+        "cost": "$0.75/each",
+        "image": "clams.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Rainbow Trout",
+        "cost": "$10.99/lb",
+        "image": "rain_trout.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Scallops",
+        "cost": "$15.49/lb",
+        "image": "scallops.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Lobster",
+        "cost": "$13.99/lb",
+        "image": "lobster.jpg",
+        "avail_qty": "25"
+    }
+]

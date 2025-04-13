@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Loin Chops",
+        "cost": "$14.99/lb",
+        "avail_qty": "25",
+        "image": "lc_lamb.jpg"
+    },
+    {
+        "name": "New York Strip Steak",
+        "cost": "$9.99/lb",
+        "avail_qty": "5",
+        "image": "ny_strip.jpg"
+    },
+    {
+        "name": "Pork Chops",
+        "cost": "$2.49/lb",
+        "avail_qty": "8",
+        "image": "pork chops.jpg"
+    },
+    {
+        "name": "Chicken Quarters",
+        "cost": "$0.99/lb",
+        "avail_qty": "5",
+        "image": "c_quarters.jpg"
+    },
+    {
+        "name": "Chicken Wings",
+        "cost": "$3.49/lb",
+        "avail_qty": "50",
+        "image": "c_wings.jpg"
+    }
+]

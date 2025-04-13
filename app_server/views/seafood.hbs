@@ -10,51 +10,17 @@
     {{> header}}
     <div class="bg-green-800 mx-auto w-11/12 h-auto px-5 py-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+            {{#each seafood}}
             <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/s_salmon.jpg" alt="s-salmon" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Sockeye Salmon</h3>
-                <p class="font-bold text-green-500 text-xl">$9.99/lb</p>
-                <p class="text-gray-600">Available Qty: 25</p>
+                <img src="img/{{this.image}}" alt="{{this.name}}" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
+                <h3 class="my-3 text-gray-700">{{this.name}}</h3>
+                <p class="font-bold text-green-500 text-xl">{{this.cost}}b</p>
+                <p class="text-gray-600">Available Qty: {{this.avail_qty}}</p>
                 <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
                     Add to Cart
                 </button>
             </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/clams.jpg" alt="clams" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Clams</h3>
-                <p class="font-bold text-green-500 text-xl">$0.75/each</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/rain_trout.jpg" alt="rain_trout" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Rainbow Trout</h3>
-                <p class="font-bold text-green-500 text-xl">$10.99/lb</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/scallops.jpg" alt="scallops" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Scallops</h3>
-                <p class="font-bold text-green-500 text-xl">$15.49/pack</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-4 text-center transition-transform duration-300 hover:scale-105">
-                <img src="img/lobster.jpg" alt="lobster" class="max-w-[150px] h-[150px] object-cover mx-auto mb-3">
-                <h3 class="my-3 text-gray-700">Lobster</h3>
-                <p class="font-bold text-green-500 text-xl">$13.99/lb</p>
-                <p class="text-gray-600">Available Qty: 25</p>
-                <button class="mt-2 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors">
-                    Add to Cart
-                </button>
-            </div>
+            {{/each}}
         </div>
         <div class="text-center mt-5">
             <a href="home" class="text-green-1000 font-bold hover:underline"><- Back to Home</a>

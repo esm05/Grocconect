@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Chocolate Cake",
+        "cost": "$9.99/each",
+        "image": "c_cake.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Gluten-Free Bread",
+        "cost": "$6.59/each",
+        "image": "gf_bread.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Italian Bread",
+        "cost": "$2.99/each",
+        "image": "i_bread.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "4 ct. Chocolate Muffins",
+        "cost": "$4.99/pack",
+        "image": "c_muffins.jpg",
+        "avail_qty": "25"
+    },
+    {
+        "name": "Brownies",
+        "cost": "$5.99/eac",
+        "image": "brownie.jpg",
+        "avail_qty": "25"
+    }
+]
