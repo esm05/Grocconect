@@ -15,7 +15,7 @@ var meatRouter = require('./app_server/routes/meat')
 var seafoodRouter = require('./app_server/routes/seafood')
 
 
-var apiProduceRouter = require('./app_api/routes/index')
+var apiGrocconnectRouter = require('./app_api/routes/index')
 var handlebars = require('hbs');
 
 // Bring in db
@@ -37,6 +37,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Enable CORS (Cross Origin Resource Sharing)
+app.use('/api', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+  next();
+})
 // Setting up routes for the different pages 
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
@@ -53,7 +61,7 @@ app.use((req, res, next) => {
   console.log(`Request URL: ${req.url}`);
   next();
 });
-app.use('/api', apiProduceRouter);
+app.use('/api', apiGrocconnectRouter);
 
 // Then add this right before your 404 handler
 app.use((req, res, next) => {

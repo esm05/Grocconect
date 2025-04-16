@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-light bg-gray-200">
+  <div class="container-fluid ">
+    <a class="navbar-brand font-bold text-3xl fw-bold " href="#">{{ title }}</a>
+    
+    <!--<div class="ms-auto">
+      <div class="form-group">
+        <select class="form-select shadow-sm border-2 rounded-lg p-2 w-64" 
+                [(ngModel)]="selectedComponent" 
+                (change)="onComponentChange()">
+          <option value="produce">Produce Listing</option>
+          <option value="dairy">Dairy Listing</option>
+          <option value="grocery">Grocery Listing</option>
+          <option value="meat">Meat Listing</option>
+          <option value="seafood">Seafood listing</option>
+          <option value="bakery">Bakery Listing</option>
+        </select>
+      </div>
+    </div>-->
+  </div>
+</nav> 
+
+<div class="container mt-4">
+  <!-- Dynamic component rendering based on selection -->
+   <!--<app-produce-listing></app-produce-listing> -->
+</div>
+
+<router-outlet></router-outlet>

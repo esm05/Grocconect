@@ -12,11 +12,14 @@ const groceryController = require('../controllers/grocery')
 // define route for our trips endpoint
 router
     .route('/produces')
-    .get(produceController.produceList); // GET Method routes produceList
+    .get(produceController.produceList) // GET Method routes produceList
+    .post(produceController.produceAddProduce);
+    
 
 router 
     .route('/produces/:produceName')
-    .get(produceController.produceFindByName);
+    .get(produceController.produceFindByName)
+    .put(produceController.produceEditProduce);
 
 router
     .route('/meats')

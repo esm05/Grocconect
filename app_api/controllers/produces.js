@@ -56,7 +56,50 @@ const produceFindByName = async(req, res) => {
 
 };
 
+// POST: /produces - Adds a new produce item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+
+const produceAddProduce = async(req, res) => {
+    const q = await Model.create({
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+
+// PUT: /produces:productName - Adds a new produce item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+const produceEditProduce = async(req, res) => {
+    const q = await Model.findOneAndUpdate(
+        {'name': req.params.produceName},
+    
+        {
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+
 module.exports = {
     produceList,
-    produceFindByName
+    produceFindByName,
+    produceAddProduce,
+    produceEditProduce
 };
