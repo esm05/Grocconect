@@ -28,4 +28,8 @@ export class ProduceDataService {
   updateProduce(formData: Produce): Observable<Produce>{
     return this.http.put<Produce>(this.url + '/' + formData.name, formData);
   }
+
+  deleteProduce(produceName: string): Observable<Produce[]> {
+    return this.http.delete<Produce[]>(this.url + '/' + produceName);
+  }
 }

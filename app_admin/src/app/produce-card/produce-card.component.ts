@@ -25,5 +25,11 @@ export class ProduceCardComponent implements OnInit{
       localStorage.setItem('productName', produce.name);
       this.router.navigate(['edit-produce'])
     }
+
+    public deleteProduce(produce: Produce){
+      localStorage.removeItem('productName');
+      localStorage.setItem('productName', produce.name);
+      this.router.navigate(['delete-produce'])
+    }
 }
 

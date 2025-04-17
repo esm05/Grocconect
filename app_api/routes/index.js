@@ -19,7 +19,8 @@ router
 router 
     .route('/produces/:produceName')
     .get(produceController.produceFindByName)
-    .put(produceController.produceEditProduce);
+    .put(produceController.produceEditProduce)
+    .delete(produceController.producceDeleteProduce);
 
 router
     .route('/meats')

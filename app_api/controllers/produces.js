@@ -96,10 +96,23 @@ const produceEditProduce = async(req, res) => {
         res.send(err);
     })
 }
+const producceDeleteProduce = async(req, res) => {
+    const q = await Model.findOneAndDelete(
+        {'name': req.params.produceName}
+    )
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
 
 module.exports = {
     produceList,
     produceFindByName,
     produceAddProduce,
-    produceEditProduce
+    produceEditProduce,
+    producceDeleteProduce
 };
