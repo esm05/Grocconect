@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-light bg-gray-200">
+<!--<nav class="navbar navbar-default navbar-light bg-gray-200">
   <div class="container-fluid ">
     <a class="navbar-brand font-bold text-3xl fw-bold " href="#">{{ title }}</a>
     
@@ -17,11 +17,12 @@
       </div>
     </div>
   </div>
-</nav> 
+</nav> -->
 
+<app-navbar></app-navbar>
 <div class="container mt-4">
   <!-- Dynamic component rendering based on selection -->
    <!--<app-produce-listing></app-produce-listing> -->
+   <router-outlet></router-outlet>
 </div>
 
-<router-outlet></router-outlet>

@@ -13,7 +13,7 @@
             Available Quantity: {{produce.avail_qty}}
         </p>
     
-        <div>
+        <div *ngIf="isLoggedIn()">
             <button (click)="editProduce(produce)" class="btn btn-info" style="background-color: #34a169;">Edit Produce</button>
             <button (click)="deleteProduce(produce)" class="btn btn-info" style="background-color: #e75f5f;">
                 <i class="fa-solid fa-trash"></i>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { Produce } from '../models/produce';
 
@@ -14,7 +15,10 @@ export class ProduceCardComponent implements OnInit{
     @Input('produce') produce: any
 
 
-    constructor (private router: Router) {}
+    constructor (
+      private router: Router,
+      private authenticationService: AuthenticationService
+    ) {}
 
     ngOnInit(): void {
       
@@ -30,6 +34,12 @@ export class ProduceCardComponent implements OnInit{
       localStorage.removeItem('productName');
       localStorage.setItem('productName', produce.name);
       this.router.navigate(['delete-produce'])
+    }
+
+    // User has to be authenticated to add or delete produce
+    public isLoggedIn()
+    {
+      return this.authenticationService.isLoggedIn();
     }
 }
 
