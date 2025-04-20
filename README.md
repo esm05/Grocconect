@@ -4,12 +4,11 @@ GrocConnect is a MEAN stack (MongoDB, Express.js, Angular, Node.js) web applicat
 
 ## Table of Contents
 
-- [Features](#Features)
+- [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
-- [Admin Authentication](#admin-authentication)
-- [API Documentation](#api-Documentation)
+- [API Documentation](#api-documentation)
 - [Testing](#testing)
 
 ## Features
@@ -103,7 +102,7 @@ ng serve
 
 The admin application will be hosted at `http://localhost:4200`
 
-#### Admin Authenticaton
+#### Admin Authentication
 The Admin SPA implements JWTs for authentication handling:
       - All Create, Update, Delete modifications are protected and require authentication
       - If the user is not authenticated and on http://localhost:4200 they need to be redirected to http://localhost:4200/login
