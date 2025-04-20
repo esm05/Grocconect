@@ -54,6 +54,13 @@
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.btn-back {
+    position: absolute;
+    top: 150px;
+    left: -400px;
+    font-size: 2.3rem;
+}
+
 
 .alert {
     border-radius: 8px;

@@ -63,4 +63,9 @@ export class LoginComponent implements OnInit {
         }
       });
     }
+
+    // Back on the express server
+    public goBack(): void {
+      window.location.href='http://localhost:3000';
+    }
 }
