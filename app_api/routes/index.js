@@ -83,42 +83,60 @@ router
 router
     .route('/meats')
     .get(meatController.meatList)
+    .post(auth, meatController.meatAddMeat);
 
 router 
     .route('/meats/:meatName')
-    .get(meatController.meatFindByName);
+    .get(meatController.meatFindByName)
+    .put(auth, meatController.meatEditMeat)
+    .delete(auth, meatController.meatDeleteMeat);
+
 
 router
     .route('/bakery')
     .get(bakeryController.bakeryList)
+    .post(auth, bakeryController.bakeryAddBakery);
 
 router 
     .route('/bakery/:bakeryName')
-    .get(bakeryController.bakeryFindByName);
+    .get(bakeryController.bakeryFindByName)
+    .put(auth, bakeryController.bakeryEditBakery)
+    .delete(auth, bakeryController.bakeryDeleteBakery);
 
 router
     .route('/seafood')
     .get(seafoodController.seafoodList)
+    .post(auth, seafoodController.seafoodAddSeafood);
 
 router 
     .route('/seafood/:seafoodName')
-    .get(seafoodController.seafoodFindByName);
+    .get(seafoodController.seafoodFindByName)
+    .put(auth, seafoodController.seafoodEditSeafood)
+    .delete(auth, seafoodController.seafoodDeleteSeafood);
 
 router
     .route('/dairy')
     .get(dairyController.dairyList)
+    .post(auth, dairyController.dairyAddDairy); // Require authentication to update
 
 router 
     .route('/dairy/:dairyName')
-    .get(dairyController.dairyFindByName);
+    .get(dairyController.dairyFindByName)
+    .put(auth, dairyController.dairyEditDairy)  // Require authentication to update
+    .delete(auth, dairyController.dairyDeleteDairy);  // Require authentication to delete
 
 router
     .route('/grocery')
     .get(groceryController.groceryList)
+    .post(auth, groceryController.groceryAddGrocery);
 
 router 
     .route('/grocery/:groceryName')
-    .get(groceryController.groceryFindByName);
+    .get(groceryController.groceryFindByName)
+    .put(auth, groceryController.groceryEditGrocery)
+    .delete(auth, groceryController.groceryDeleteGrocery);
+
+
 // Add logging to confirm routes are registered
 console.log('API routes defined:', router.stack.map(layer => {
     if (layer.route) return layer.route.path;

@@ -1,0 +1,21 @@
+<div class="card mt-2">
+    <div class="card-header text-white font-bold bg-green-600 text-center">{{ dairy.name }}</div>
+    <div class="bg-green-200 pt-2 pb-2 rounded-lg shadow">
+        <img 
+            src="assets/img/{{ dairy.image }}" 
+            class="card-img-top max-w-[150px] h-[150px] object-cover mx-auto rounded-lg shadow"
+        >
+
+        <h6 class="card-subtitle mb-2 pt-6 text-gray-700 font-semibold">
+            Price: {{ dairy.cost }}
+        </h6>
+        <p class="card-subtitle mt-3 mb-3 text-gray-600">
+            Available Quantity: {{dairy.avail_qty}}
+        </p>
+    
+        <div *ngIf="isLoggedIn()">
+            <button (click)="editDairy(dairy)" class="btn btn-info" style="background-color: #34a169;">Edit Dairy</button>
+            <button (click)="deleteDairy(dairy)" class="btn btn-info" style="background-color: #e75f5f;">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>

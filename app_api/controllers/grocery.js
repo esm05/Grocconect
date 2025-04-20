@@ -56,7 +56,62 @@ const groceryFindByName = async(req, res) => {
 
 };
 
+// POST: /grocery - Adds a new grocery item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+
+const groceryAddGrocery = async(req, res) => {
+    const q = await Model.create({
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+
+// PUT: /grocery:groceryName - Adds a new grocery item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+const groceryEditGrocery = async(req, res) => {
+    const q = await Model.findOneAndUpdate(
+        {'name': req.params.groceryName},
+    
+        {
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+const groceryDeleteGrocery = async(req, res) => {
+    const q = await Model.findOneAndDelete(
+        {'name': req.params.groceryName}
+    )
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
 module.exports = {
     groceryList,
-    groceryFindByName
+    groceryFindByName,
+    groceryAddGrocery,
+    groceryDeleteGrocery,
+    groceryEditGrocery
 };

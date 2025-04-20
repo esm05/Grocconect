@@ -1,0 +1,60 @@
+<div class="col-md-4">
+    <h2 class="text-center" style="font-weight: bold; width: 100% ;">Edit Seafood</h2>
+    <form *ngIf="editForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name:</label>
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="Name"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"
+        />
+        <div *ngIf="submitted && f['name'].errors">
+          <div *ngIf="f['name'].errors?.['required']">Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Cost:</label>
+        <input
+          type="text"
+          formControlName="cost"
+          placeholder="Cost"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['cost'].errors }"
+        />
+        <div *ngIf="submitted && f['cost'].errors">
+          <div *ngIf="f['cost'].errors?.['required']">Cost is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Image Name:</label>
+        <input
+          type="text"
+          formControlName="image"
+          placeholder="Image"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['image'].errors }"
+        />
+        <div *ngIf="submitted && f['image'].errors">
+          <div *ngIf="f['image'].errors?.['required']">Image name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Available Qty:</label>
+        <input
+          type="text"
+          formControlName="avail_qty"
+          placeholder="Available"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['avail_qty'].errors }"
+        />
+        <div *ngIf="submitted && f['avail_qty'].errors">
+          <div *ngIf="f['avail_qty'].errors?.['required']">Available Qty is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+      </div>
+      <button type="submit" class="btn btn-info" style="background-color: #34a169;">Save</button>
+    </form>
+  </div>

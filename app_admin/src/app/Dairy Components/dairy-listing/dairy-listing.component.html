@@ -1,0 +1,11 @@
+<div class="mb-3" *ngIf="isLoggedIn()">
+    <button (click)="addDairy()" class="btn btn-success font-medium rounded-lg shadow-sm hover:shadow-md transition-all" style="background-color: #38a169;">
+        <i class="fas fa-plus-circle mr-2"></i> Add Dairy
+    </button>
+</div>
+
+<div class="row bg-gray-200 p-3 rounded-lg shadow-inner">
+    <div *ngFor="let dairy of dairy" class="col-md-2 mb-3"> 
+        <app-dairy-card [dairy]="dairy" class="d-block h-100"></app-dairy-card>
+    </div>
+</div>

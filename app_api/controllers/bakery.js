@@ -56,7 +56,63 @@ const bakeryFindByName = async(req, res) => {
 
 };
 
+// POST: /bakery - Adds a new bakery item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+
+const bakeryAddBakery = async(req, res) => {
+    const q = await Model.create({
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+
+// PUT: /bakery:bakeryName - Updates a bakery item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+const bakeryEditBakery = async(req, res) => {
+    const q = await Model.findOneAndUpdate(
+        {'name': req.params.bakeryName},
+    
+        {
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+const bakeryDeleteBakery = async(req, res) => {
+    const q = await Model.findOneAndDelete(
+        {'name': req.params.bakeryName}
+    )
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+
 module.exports = {
     bakeryList,
-    bakeryFindByName
+    bakeryFindByName,
+    bakeryAddBakery,
+    bakeryDeleteBakery,
+    bakeryEditBakery
 };

@@ -1,0 +1,13 @@
+<!-- <pre>{{produces | json}}</pre> -->
+<!-- Rendering of the cards is done in a seperate file follwoing SoC (Speration of Concerns)-->
+<div class="mb-3" *ngIf="isLoggedIn()">
+    <button (click)="addGrocery()" class="btn btn-success font-medium rounded-lg shadow-sm hover:shadow-md transition-all" style="background-color: #38a169;">
+        <i class="fas fa-plus-circle mr-2"></i> Add Grocery
+    </button>
+</div>
+
+<div class="row bg-gray-200 p-3 rounded-lg shadow-inner">
+    <div *ngFor="let grocery of groceries" class="col-md-2 mb-3"> 
+        <app-grocery-card [grocery]="grocery" class="d-block h-100"></app-grocery-card>
+    </div>
+</div>

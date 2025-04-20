@@ -56,7 +56,63 @@ const seafoodFindByName = async(req, res) => {
 
 };
 
+// POST: /seafood - Adds a new saefood item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+
+const seafoodAddSeafood = async(req, res) => {
+    const q = await Model.create({
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+
+// PUT: /seafood:seafoodName - Adds a new seafood item
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client 
+const seafoodEditSeafood = async(req, res) => {
+    const q = await Model.findOneAndUpdate(
+        {'name': req.params.seafoodName},
+    
+        {
+        name: req.body.name,
+        cost: req.body.cost,
+        image: req.body.image,
+        avail_qty: req.body.avail_qty
+    })
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+const seafoodDeleteSeafood = async(req, res) => {
+    const q = await Model.findOneAndDelete(
+        {'name': req.params.seafoodName}
+    )
+    .exec()
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        res.send(err);
+    })
+}
+
 module.exports = {
     seafoodList,
-    seafoodFindByName
+    seafoodFindByName,
+    seafoodAddSeafood,
+    seafoodEditSeafood,
+    seafoodDeleteSeafood
 };

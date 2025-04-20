@@ -1,0 +1,22 @@
+<div class="card mt-2">
+    <div class="card-header text-white font-bold bg-green-600 text-center">{{ bakery.name }}</div>
+    <div class="bg-green-200 pt-2 pb-2 rounded-lg shadow">
+        <img 
+            src="assets/img/{{ bakery.image }}" 
+            class="card-img-top max-w-[150px] h-[150px] object-cover mx-auto rounded-lg shadow"
+        >
+
+        <h6 class="card-subtitle mb-2 pt-6 text-gray-700 font-semibold">
+            Price: {{ bakery.cost }}
+        </h6>
+        <p class="card-subtitle mt-3 mb-3 text-gray-600">
+            Available Quantity: {{bakery.avail_qty}}
+        </p>
+    
+        <div *ngIf="isLoggedIn()">
+            <button (click)="editBakery(bakery)" class="btn btn-info" style="background-color: #34a169;">Edit Bakery</button>
+            <button (click)="deleteBakery(bakery)" class="btn btn-info" style="background-color: #e75f5f;">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+    
