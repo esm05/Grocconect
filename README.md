@@ -9,7 +9,7 @@ GrocConnect is a MEAN stack (MongoDB, Express.js, Angular, Node.js) web applicat
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [Admin Authentication](#admin-authentication)
-- [API Documentation](#Api-Documentation)
+- [API Documentation](#api-Documentation)
 - [Testing](#testing)
 
 ## Features
