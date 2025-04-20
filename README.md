@@ -178,8 +178,9 @@ API endpoints can be tested using Postman:
    - `token`: Token received after login
       test JWT here: `https://jwt.io/` provide JWT_SECRET defined in .env
 
-3. Testing Endpoint that require authentication 
-    -Under authorization header choose Bearer Toekn and paste token from successful login
-    -HTTP verb `baseUrl`: `http://localhost:3000/api/department/:departmentName
+3. Testing Endpoints that require authentication 
+    1. Under the authorization header, choose Bearer Token from drop-down menu
+    2. Paste the token from a successful login
+    3. HTTP verb `baseUrl`: `http://localhost:3000/api/department/:departmentName`
 
 
