@@ -31,7 +31,7 @@ GrocConnect is a MEAN stack (MongoDB, Express.js, Angular, Node.js) web applicat
 
 Before installing GrocConnect, ensure you have the following installed locally:
 
-- [Node.js and npm](https://nodejs.org/en/download)
+- [Download Node.js](https://nodejs.org/en/download)
 - MongoDB 
 - Postman (optional for API endpoint testing)
 
