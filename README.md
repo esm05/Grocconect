@@ -62,7 +62,7 @@ JWT_SECRET=your_jwt_secret
 3. Seed the database:
 
 ```bash
-node .\app_server\models\seed
+node .\app_api\models\seed
 ```
 
 ### Frontend Setup
